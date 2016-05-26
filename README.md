@@ -13,13 +13,14 @@ see: https://github.com/tmrts/boilr/issues/9 and https://github.com/tmrts/boilr/
 
 ### Install boilr
 
-https://github.com/tmrts/boilr
+1. Download the latest binary from: https://github.com/tmrts/boilr/releases
+2. Run `boilr init` to set it up
 
 ### Install this template
 
 `boilr template download rawkode/boilr-docker-compose-php dockercomposephp`
 
-## Usage
+## Use this template
 
 `boilr template use dockercomposephp <project name>`
 
