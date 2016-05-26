@@ -4,7 +4,8 @@ Boilr is a tool for generating your projects boilerplate files. This template re
 
 These templates are configued based on MY personal opinion on how docker-compose works best for PHP, particularly Symfony, projects.
 
-### These templates WILL get smarter when boilr advances, see: https://github.com/tmrts/boilr/issues/9 and https://github.com/tmrts/boilr/issues/10
+**These templates WILL get smarter when boilr advances**
+see: https://github.com/tmrts/boilr/issues/9 and https://github.com/tmrts/boilr/issues/10
 
 ## Installation
 
