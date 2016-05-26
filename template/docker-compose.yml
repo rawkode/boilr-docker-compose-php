@@ -1,0 +1,93 @@
+version: '2'
+
+networks:
+    public:
+        driver: bridge
+    private:
+        driver: bridge
+
+volumes:
+    cache:
+        driver: local
+    logs:
+        driver: local
+{{ if eq node "yes" }}
+    node_modules:
+        driver: local
+    node_output:
+        driver: local
+{{ end }}
+
+services:
+    application:
+        image: php:{{ php_version }}
+        working_dir: /var/www
+        volumes:
+            - .:/var/www
+            - cache:/var/www/{{ application_cache_directory | trimSpace }}
+            - logs:/var/www/{{ application_log_directory | trimSpace }}
+        ports:
+            - 80
+
+{{ if eq node "yes" }}
+    node:
+        image: node:6.2
+        working_dir: /var/www
+        entrypoint: npm run develop
+        volumes:
+            - .:/var/www
+            - node_modules:/var/www/node_modules
+            - node_output::/var/www/{{ node_output_directory }}
+{{ end }}
+
+{{ if eq mysql "yes" }}
+    mysql:
+        image: mysql:5.7
+        environment:
+            - MYSQL_DATABASE: database
+            - MYSQL_USER: user
+            - MYSQL_PASSWORD: password
+{{ end }}
+
+{{ if eq postgres "yes" }}
+    postgresql:
+        image: postgres:9.5
+        environment:
+            - POSTGRES_DB: database
+            - POSTGRES_USER: user
+            - POSTGRES_PASSWORD: password
+{{ end }}
+
+{{ if eq nginx "yes" }}
+    nginx:
+        image: nginx:1.10-alpine
+        volumes:
+            - .:/var/www
+            - cache:{{ application_cache_directory | trimSpace }}
+            - logs:{{ application_log_directory | trimSpace }}
+{{ end }}
+
+{{ if eq memcached "yes" }}
+    memcached:
+        image: memcached:1.4
+{{ end }}
+
+{{ if eq redis "yes" }}
+    redis:
+        image: redis:3.2-alpine
+{{ end }}
+
+{{ if eq rabbitmq "yes" }}
+    rabbitmq:
+        image: rabbitmq:3.6-management
+        ports:
+            - 15672
+        environment:
+            - RABBITMQ_DEFAULT_USER: user
+            - RABBITMQ_DEFAULT_PASS: password
+{{ end }}
+
+{{ if eq neo4j "yes" }}
+     neo4j:
+        image: neo4j:3.0
+{{ end }}

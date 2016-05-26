@@ -1,0 +1,26 @@
+{
+    "application_log_directory": "app/logs",
+    "application_cache_directory": "app/cache",
+    "node_output_directory": "web/assets",
+    "php_version": [
+        "5.5-apache",
+        "5.5-fpm",
+        "5.6-apache",
+        "5.6-fpm",
+        "7-apache",
+        "7-fpm"
+    ],
+    "mysql": [ "yes", "no" ],
+    "postgres": [ "yes", "no" ],
+    "redis": [ "yes", "no" ],
+    "nginx": [ "yes", "no" ],
+    "rabbitmq": ["yes", "no" ],
+    "memcached": [ "yes", "no" ],
+    "redis": [ "yes", "no" ],
+    "neo4j": [ "yes", "no" ],
+    "node": [ "yes", "no" ],
+    "usewebdriver": [ "yes", "no" ],
+    "webdriver": [ "Selenium", "PhantomJS" ],
+    "tests_screenshots_directory": "screenshots",
+    "tests_build_output_directory": "build"
+}
