@@ -19,6 +19,13 @@
     "redis": [ "yes", "no" ],
     "neo4j": [ "yes", "no" ],
     "node": [ "yes", "no" ],
+    "node_version": [
+        "5.6.0",
+        "5.9.0",
+        "5.11.0",
+        "6.0.0",
+        "6.2.0"
+    ],
     "usewebdriver": [ "yes", "no" ],
     "webdriver": [ "Selenium", "PhantomJS" ],
     "tests_screenshots_directory": "screenshots",
