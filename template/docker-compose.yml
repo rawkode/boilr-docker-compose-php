@@ -91,3 +91,8 @@ services:
      neo4j:
         image: neo4j:3.0
 {{ end }}
+
+{{ if eq elasticsearch "yes" }}
+    elasticsearch:
+      image: elasticsearch:2.3
+{{ end }}
