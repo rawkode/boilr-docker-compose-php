@@ -29,5 +29,6 @@
     "usewebdriver": [ "yes", "no" ],
     "webdriver": [ "Selenium", "PhantomJS" ],
     "tests_screenshots_directory": "screenshots",
-    "tests_build_output_directory": "build"
+    "tests_build_output_directory": "build",
+    "elasticsearch": ["yes", "no"]
 }
