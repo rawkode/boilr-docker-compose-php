@@ -26,6 +26,9 @@ services:
             - .:/var/www
             - cache:/var/www/{{ application_cache_directory | trimSpace }}
             - logs:/var/www/{{ application_log_directory | trimSpace }}
+        networks:
+            - public
+            - private
         ports:
             - 80
 
@@ -38,6 +41,8 @@ services:
             - .:/var/www
             - node_modules:/var/www/node_modules
             - node_output::/var/www/{{ node_output_directory }}
+        networks:
+            - private
 {{ end }}
 
 {{ if eq mysql "yes" }}
@@ -47,6 +52,8 @@ services:
             - MYSQL_DATABASE: database
             - MYSQL_USER: user
             - MYSQL_PASSWORD: password
+        networks:
+            - private
 {{ end }}
 
 {{ if eq postgres "yes" }}
@@ -56,6 +63,8 @@ services:
             - POSTGRES_DB: database
             - POSTGRES_USER: user
             - POSTGRES_PASSWORD: password
+        networks:
+            - private
 {{ end }}
 
 {{ if eq nginx "yes" }}
@@ -65,16 +74,23 @@ services:
             - .:/var/www
             - cache:{{ application_cache_directory | trimSpace }}
             - logs:{{ application_log_directory | trimSpace }}
+        networks:
+            - public
+            - private
 {{ end }}
 
 {{ if eq memcached "yes" }}
     memcached:
         image: memcached:1.4
+        networks:
+            - private
 {{ end }}
 
 {{ if eq redis "yes" }}
     redis:
         image: redis:3.2-alpine
+        networks:
+            - private
 {{ end }}
 
 {{ if eq rabbitmq "yes" }}
@@ -85,14 +101,20 @@ services:
         environment:
             - RABBITMQ_DEFAULT_USER: user
             - RABBITMQ_DEFAULT_PASS: password
+        networks:
+            - private
 {{ end }}
 
 {{ if eq neo4j "yes" }}
      neo4j:
         image: neo4j:3.0
+        networks:
+            - private
 {{ end }}
 
 {{ if eq elasticsearch "yes" }}
     elasticsearch:
       image: elasticsearch:2.3
+        networks:
+            - private
 {{ end }}
