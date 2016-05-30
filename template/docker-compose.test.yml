@@ -12,8 +12,8 @@ services:
         {{ if eq webdriver "Selenium" }}
         image: selenium/standalone-firefox-debug:2.52.0
         environment:
-            - SCREEN_WIDTH=1920
-            - SCREEN_HEIGHT=1480
+            SCREEN_WIDTH: 1920
+            SCREEN_HEIGHT: 1480
         {{ else if eq webdriver "PhantomJS" }}
         image: cmfatih/phantomjs
         command: "--webdriver=4444"
