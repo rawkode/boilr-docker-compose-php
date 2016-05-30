@@ -21,4 +21,6 @@ services:
         volumes:
             - screenshots:/var/www/{{ tests_screenshots_directory }}
             - build_output:/var/www/{{ tests_build_output_directory }}
+        networks:
+            - private
 {{ end }}
