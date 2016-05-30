@@ -49,9 +49,9 @@ services:
     mysql:
         image: mysql:5.7
         environment:
-            - MYSQL_DATABASE: database
-            - MYSQL_USER: user
-            - MYSQL_PASSWORD: password
+            MYSQL_DATABASE: database
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
         networks:
             - private
 {{ end }}
@@ -60,9 +60,9 @@ services:
     postgresql:
         image: postgres:9.5
         environment:
-            - POSTGRES_DB: database
-            - POSTGRES_USER: user
-            - POSTGRES_PASSWORD: password
+            POSTGRES_DB: database
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
         networks:
             - private
 {{ end }}
@@ -99,8 +99,8 @@ services:
         ports:
             - 15672
         environment:
-            - RABBITMQ_DEFAULT_USER: user
-            - RABBITMQ_DEFAULT_PASS: password
+            RABBITMQ_DEFAULT_USER: user
+            RABBITMQ_DEFAULT_PASS: password
         networks:
             - private
 {{ end }}
