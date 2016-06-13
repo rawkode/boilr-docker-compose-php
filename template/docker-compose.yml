@@ -52,6 +52,7 @@ services:
             MYSQL_DATABASE: database
             MYSQL_USER: user
             MYSQL_PASSWORD: password
+            MYSQL_RANDOM_ROOT_PASSWORD: "true"
         networks:
             - private
 {{ end }}
