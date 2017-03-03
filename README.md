@@ -6,21 +6,17 @@ These templates are configued based on MY personal opinion on how docker-compose
 
 After the YAML files are generated, you may need to tweak slightly (Node entrypoint, etc)
 
-**These templates will get smarter when boilr advances**
-see: https://github.com/tmrts/boilr/issues/9 and https://github.com/tmrts/boilr/issues/10
-
 ## Installation
 
 ### Install boilr
 
-1. Download the latest binary from: https://github.com/tmrts/boilr/releases
-2. Run `boilr init` to set it up
+Download the latest binary from: https://github.com/tmrts/boilr/releases
 
 ### Install this template
 
-`boilr template download rawkode/boilr-docker-compose-php dockercomposephp`
+`$ boilr template download rawkode/boilr-docker-compose-php dockercomposephp`
 
 ## Use this template
 
-`boilr template use dockercomposephp <project name>`
+`$ boilr template use dockercomposephp <project name>`
 
