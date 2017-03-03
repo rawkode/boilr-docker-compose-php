@@ -1,34 +1,69 @@
 {
-    "application_log_directory": "app/logs",
-    "application_cache_directory": "app/cache",
-    "node_output_directory": "web/assets",
-    "php_version": [
-        "5.5-apache",
-        "5.5-fpm",
-        "5.6-apache",
-        "5.6-fpm",
-        "7-apache",
-        "7-fpm"
-    ],
-    "mysql": [ "yes", "no" ],
-    "postgres": [ "yes", "no" ],
-    "redis": [ "yes", "no" ],
-    "nginx": [ "yes", "no" ],
-    "rabbitmq": ["yes", "no" ],
-    "memcached": [ "yes", "no" ],
-    "redis": [ "yes", "no" ],
-    "neo4j": [ "yes", "no" ],
-    "node": [ "yes", "no" ],
-    "node_version": [
-        "5.6.0",
-        "5.9.0",
-        "5.11.0",
-        "6.0.0",
-        "6.2.0"
-    ],
-    "usewebdriver": [ "yes", "no" ],
-    "webdriver": [ "Selenium", "PhantomJS" ],
-    "tests_screenshots_directory": "screenshots",
-    "tests_build_output_directory": "build",
-    "elasticsearch": ["yes", "no"]
+  "php_version": [
+    "5.6-apache",
+    "7-apache",
+    "5-fpm-alpine",
+    "7-fpm-alpine"
+  ],
+  "php_expose_port": "80",
+
+  "mysql_version": [
+    "None",
+    "latest",
+    "8",
+    "5.7",
+    "5.6",
+    "5.5"
+  ],
+
+  "postgres_version": [
+    "None",
+    "latest",
+    "9.6-alpine",
+    "9.5-alpine"
+  ],
+
+  "redis_version": [
+    "None",
+    "latest",
+    "3.2-alpine"
+  ],
+
+  "memcached_version": [
+    "None",
+    "latest",
+    "1-alpine"
+  ],
+
+  "node_version": [
+    "None",
+    "latest",
+    "7-alpine",
+    "6-alpine"
+  ],
+  "node_output_directory": "web/assets",
+
+  "elasticsearch_version": [
+    "None",
+    "2",
+    "5"
+  ],
+
+  "rabbitmq_version": [
+    "None",
+    "latest",
+    "management",
+    "alpine",
+    "management-alpine"
+  ],
+
+  "neo4j_version": [
+    "None",
+    "latest",
+    "enterprise"
+  ],
+
+  "application_log_directory": "app/logs",
+  "application_cache_directory": "app/cache"
 }
+
