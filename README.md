@@ -14,9 +14,9 @@ Download the latest binary from: https://github.com/tmrts/boilr/releases
 
 ### Install this template
 
-`$ boilr template download rawkode/boilr-docker-compose-php dockercomposephp`
+`$ boilr template download rawkode/boilr-docker-compose-php dcphp`
 
 ## Use this template
 
-`$ boilr template use dockercomposephp <project name>`
+`$ boilr template use dcphp <project name>`
 
