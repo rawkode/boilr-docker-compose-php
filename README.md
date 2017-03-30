@@ -19,4 +19,3 @@ Download the latest binary from: https://github.com/tmrts/boilr/releases
 ## Use this template
 
 `$ boilr template use dcphp <project name>`
-
